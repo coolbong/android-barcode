@@ -1,4 +1,45 @@
-bin/
-gen/
+# NDK
+obj/
+
+# Gradle directories
+.gradle/
+build/
+app/build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Log Files
+*.log
+
+# Android Studio / IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# Eclipse
 .classpath
 .project
+.settings/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Built application files
+*.apk
+*.ap_
+*.aab
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+out/

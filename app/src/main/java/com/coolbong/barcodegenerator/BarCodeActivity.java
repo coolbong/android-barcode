@@ -21,8 +21,16 @@ public class BarCodeActivity extends Activity {
 		String barcode = "7761010114033430";
 		Code128 code = new Code128(this);
         code.setData(barcode);
-        Bitmap bitmap = code.getBitmap(680, 300);
+        
+        // Responsive size
+        android.util.DisplayMetrics metrics = getResources().getDisplayMetrics();
+        int width = metrics.widthPixels - (int)(40 * metrics.density); // leave margins
+        int height = (int)(width * 0.45); // Adjust ratio appropriately
+        
+        Bitmap bitmap = code.getBitmap(width, height);
         ImageView ivBarcode = (ImageView)findViewById(R.id.code128_barcode);
+        // Let it scale properly inside ImageView
+        ivBarcode.setScaleType(ImageView.ScaleType.FIT_CENTER);
         ivBarcode.setImageBitmap(bitmap);
 	}
 
